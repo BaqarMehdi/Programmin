@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProgramminStudio</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        font-family: "Times New Roman", Times, serif;
+        box-sizing: border-box;
+      }
+      .sld-img {
+        height: 100vh;
+        width: 100vw;
+        opacity: 1;
+        overflow: hidden;
+        display: block;
+      }
+
+      /* navbar css */
+
+      .navbar {
+        position: absolute;
+        top: 0;
+        right: 20%;
+        padding: 20px 20px;
+        /* width: 300px; Fixed width for desktop */
+      }
+
+      .navbar-header {
+        display: none; /* Hide menu icon on desktop */
+      }
+
+      .navbar-menu {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 15px;
+      }
+
+      .navbar-menu li {
+        margin: 0;
+      }
+
+      .navbar-menu a {
+        text-decoration: none;
+        padding: 8px 20px;
+        color: #fff;
+        display: block;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 768px) {
+        .navbar {
+          right: 10%; /* Adjust for mobile/tablet screens */
+          width: auto;
+        }
+
+        .navbar-header {
+          display: block;
+          text-align: right;
+        }
+
+        .menu-icon {
+          font-size: 24px;
+          cursor: pointer;
+          display: block;
+        }
+
+        .navbar-menu {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          top: 50px;
+          right: 0;
+          background-color: #f8f9fa;
+          width: 100%;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-menu.show {
+          display: flex;
+        }
+
+        .navbar-menu a {
+          padding: 15px;
+          text-align: center;
+        }
+      }
+      /* footer */
+
+      .footer {
+        color: black;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 70px;
+        text-align: left;
+      }
+
+      .footer-column,
+      .footer li {
+        font-size: .8rem;
+        list-style: none;
+        margin-bottom: .7rem;
+      }
+
+      .footer-column {
+        flex: 1;
+        min-width: 150px;
+        margin: 10px;
+      }
+      .footer-column cus{
+        flex: 1;
+        min-width: 150px;
+        margin: 10px;
+        margin-right: 1rem;
+
+      }
+
+      .footer h3 {
+        /* border-bottom: 1px solid #444; */
+        font-weight: bold;
+        color: rgb(20, 18, 18);
+        font-size: 1.2rem;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+      }
+
+      .footer a {
+        color: black;
+        text-decoration: none;
+        
+    }
+    @media (max-width: 835px) {
+        .footer {
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+        .footer-column {
+          flex: 0 0 50%;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .footer {
+          flex-direction: column;
+        }
+        .footer-column {
+          flex: 1 1 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="image-slider">
+        <img class="sld-img" src="./Assets/Slider-img.png" />
+      </div>
+      <div class="navbar-ab">
+        <nav class="navbar">
+          <div class="navbar-header">
+            <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+          </div>
+          <ul class="navbar-menu" id="navbarMenu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#pages">Pages</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- footer -->
+    <footer class="footer">
+      <div class="footer-column cus">
+        <h3>About</h3>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore dolorem repellendus, hic minima impedit placeat reprehenderit sed tempore architecto harum 
+        </p>
+      </div>
+      <div class="footer-column">
+        <h3>Shopping Online</h3>
+        <ul>
+          <li><a href="#">Order Status</a></li>
+          <li><a href="#">Shipping and Delivery</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Payment Options</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Information</h3>
+        <ul>
+          <li><a href="#">Gift Card</a></li>
+          <li><a href="#">Find a store</a></li>
+          <li><a href="#">Newsletter</a></li>
+          <li><a href="#">Become a member</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Contact Us</h3>
+        <ul>
+          <li><a href="#">store@mail.column</a></li>
+          <li><a href="#">Tel +91 1234 5678 99 </a></li>
+        </ul>
+      </div>
+    </footer>
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById("navbarMenu");
+        menu.classList.toggle("show");
+      }
+    </script>
+  </body>
+</html>
