@@ -11,22 +11,24 @@
         font-family: "Times New Roman", Times, serif;
         box-sizing: border-box;
       }
-      .sld-img {
+      section {
+        margin: 8rem;
+      }
+      /* header image */
+      .image-slider {
         height: 100vh;
         width: 100vw;
-        opacity: 1;
-        overflow: hidden;
-        display: block;
+        background-image: url("./Assets/Banner.png");
+        background-size: cover;
+        background-position: center;
       }
 
       /* navbar css */
-
       .navbar {
         position: absolute;
         top: 0;
         right: 20%;
-        padding: 20px 20px;
-        /* width: 300px; Fixed width for desktop */
+        padding: 20px;
       }
 
       .navbar-header {
@@ -76,7 +78,7 @@
           position: absolute;
           top: 50px;
           right: 0;
-          background-color: #f8f9fa;
+          background-color: rgba(248, 249, 250, 0.9);
           width: 100%;
           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
@@ -88,10 +90,203 @@
         .navbar-menu a {
           padding: 15px;
           text-align: center;
+          color: black;
         }
       }
-      /* footer */
 
+      /* navbar ends */
+
+      /* Position Secion */
+
+      .position-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 20px;
+        background-color: #f9f9f9;
+      }
+
+      .image-card {
+        position: relative;
+        margin: 10px;
+        flex-basis: calc(50% - 20px); /* two items in a row with spacing */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        transition: transform 0.3s;
+      }
+
+      .image-card img {
+        width: 100%;
+        height: auto;
+      }
+
+      .image-card .text-space {
+        position: absolute;
+        top: 50%;
+        left: 30%;
+        transform: translate(-50%, -50%);
+        background: rgba(255, 255, 255, 0.8);
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        width: 50%;
+      }
+
+      .text-space p{
+        font-weight: bold;
+        font-size: 2rem;
+      }
+
+      .image-card:hover {
+        transform: scale(1.05);
+      }
+
+      @media (max-width: 768px) {
+        .image-card {
+          flex-basis: calc(
+            100% - 20px
+          ); /* one item in a row on smaller screens */
+        }
+      }
+
+      /* General styles for Why Should Choose Us section */
+      .why-choose-us {
+        padding: 40px 20px;
+      }
+
+      .why-choose-us h2 {
+        text-align: center;
+        margin-bottom: 50px;
+        font-size: 2rem;
+      }
+
+      .choose-card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 1rem;
+        /* align-items: center; */
+      }
+
+      .choose-card {
+        position: relative;
+        flex: 0 0 22%; /* Approximately 4 cards per row */
+        margin-bottom: 40px;
+        overflow: hidden;
+      }
+
+      .choose-card img {
+        border-radius: 10px;
+        border-bottom: 7px solid #206299;
+        background-color: rgb(194, 194, 194);
+        padding: 2rem;
+        justify-content: center;
+        align-items: center;
+        display: block;
+      }
+
+      .choose-card-details {
+        bottom: -50px; /* Adjust this value as needed */
+        left: 0;
+        width: 100%;
+        background-color: white;
+        padding: 10px 0;
+        text-align: left;
+      }
+
+      .choose-card-details h3 {
+        margin: 0;
+        font-size: 1.1rem;
+      }
+
+      .choose-card-details p {
+        margin: 5px 0 0;
+        font-size: 1rem;
+      }
+
+      /* Tablet styles */
+      @media (max-width: 835px) {
+        .choose-card {
+          flex: 0 0 45%; /* Approximately 2 cards per row */
+        }
+      }
+
+      /* Mobile styles */
+      @media (max-width: 600px) {
+        .choose-card {
+          flex: 0 0 100%; /* 1 card per row */
+        }
+      }
+
+      /* New arrivals section css */
+
+      /* General styles for New Arrivals section */
+      .new-arrivals {
+        padding: 40px 20px;
+      }
+
+      .new-arrivals h2 {
+        text-align: center;
+        margin-bottom: 50px;
+        font-size: 2rem;
+      }
+
+      .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .card {
+        position: relative;
+        flex: 0 0 22%; /* Approximately 4 cards per row */
+        margin-bottom: 40px;
+        overflow: hidden;
+      }
+
+      .card img {
+        width: 100%;
+        display: block;
+      }
+
+      .card-details {
+        bottom: -50px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        color: black;
+        padding: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: left;
+      }
+
+      .card-details h3 {
+        margin: 0;
+        font-size: 1.1rem;
+      }
+
+      .card-details p {
+        margin: 5px 0 0;
+        font-size: 1rem;
+      }
+
+      /* Tablet styles */
+      @media (max-width: 835px) {
+        .card {
+          flex: 0 0 45%; /* Approximately 2 cards per row */
+        }
+      }
+
+      /* Mobile styles */
+      @media (max-width: 600px) {
+        .card {
+          flex: 0 0 100%; /* 1 card per row */
+        }
+      }
+
+      /* new arrival section css end */
+
+      /* General footer styles */
       .footer {
         color: black;
         display: flex;
@@ -102,9 +297,22 @@
 
       .footer-column,
       .footer li {
-        font-size: .8rem;
+        font-size: 0.8rem;
         list-style: none;
-        margin-bottom: .7rem;
+        margin-bottom: 0.7rem;
+      }
+
+      .links {
+        display: flex;
+      }
+      .link-social {
+        padding: 0.7rem;
+        cursor: pointer;
+        transition: 0.5s ease-in-out;
+      }
+
+      .link-social:hover {
+        transform: scale(1.1);
       }
 
       .footer-column {
@@ -112,16 +320,8 @@
         min-width: 150px;
         margin: 10px;
       }
-      .footer-column cus{
-        flex: 1;
-        min-width: 150px;
-        margin: 10px;
-        margin-right: 1rem;
-
-      }
 
       .footer h3 {
-        /* border-bottom: 1px solid #444; */
         font-weight: bold;
         color: rgb(20, 18, 18);
         font-size: 1.2rem;
@@ -132,33 +332,40 @@
       .footer a {
         color: black;
         text-decoration: none;
-        
-    }
-    @media (max-width: 835px) {
-        .footer {
-          flex-direction: row;
-          flex-wrap: wrap;
-        }
+      }
+
+      /* Tablet styles for footer */
+      @media (max-width: 835px) {
         .footer-column {
-          flex: 0 0 50%;
+          flex: 0 0 45%; /* Each column takes approximately half the width */
         }
       }
 
+      /* Mobile styles for footer */
       @media (max-width: 600px) {
         .footer {
-          flex-direction: column;
+          flex-direction: column; /* Stack columns vertically */
         }
+
         .footer-column {
-          flex: 1 1 100%;
+          flex: 1 1 100%; /* Each column takes full width */
         }
+      }
+
+      .footer hr {
+        border: rgb(63, 41, 41);
+      }
+      .copyright {
+        width: 100%;
+        font-size: 0.6rem;
+        text-align: center;
+        padding: 2rem;
       }
     </style>
   </head>
   <body>
     <header>
-      <div class="image-slider">
-        <img class="sld-img" src="./Assets/Slider-img.png" />
-      </div>
+      <div class="image-slider"></div>
       <div class="navbar-ab">
         <nav class="navbar">
           <div class="navbar-header">
@@ -174,13 +381,122 @@
         </nav>
       </div>
     </header>
+
+    <!-- Position Section -->
+
+    <section class="position-section">
+      <div class="image-card">
+        <img src="./Assets/men-coll.png" alt="Person pointing" />
+        <div class="text-space">
+          <p>Men's Casual</p>
+          <p>fashion Style</p>
+        </div>
+      </div>
+      <div class="image-card">
+        <img src="./Assets/women-coll.png" alt="Person pointing" />
+        <div class="text-space">
+          <p>Women's Casual</p>
+          <p>fashion Style</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reasons Section -->
+
+    <section class="why-choose-us">
+      <h2>Why Should Choose Us</h2>
+      <div class="choose-card-container">
+        <div class="choose-card">
+          <img src="./Assets/truck.png" alt="Reason 1" />
+          <div class="choose-card-details">
+            <h3>Free Shipping</h3>
+            <p>Lorem ipsum dolor sit amet consectetur</p>
+          </div>
+        </div>
+        <div class="choose-card">
+          <img src="./Assets/pay.png" alt="Reason 2" />
+          <div class="choose-card-details">
+            <h3>Easy Payment</h3>
+            <p>Lorem ipsum dolor sit amet consectetur</p>
+          </div>
+        </div>
+        <div class="choose-card">
+          <img src="./Assets/shield.png" alt="Reason 3" />
+          <div class="choose-card-details">
+            <h3>Money Back Gurantee</h3>
+            <p>Lorem ipsum dolor sit amet consectetur</p>
+          </div>
+        </div>
+        <div class="choose-card">
+          <img src="./Assets/quality.png" alt="Reason 4" />
+          <div class="choose-card-details">
+            <h3>Finest Quality</h3>
+            <p>Lorem ipsum dolor sit amet consectetur</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- New arrivals Section -->
+
+    <section class="new-arrivals">
+      <h2>New Arrivals</h2>
+      <div class="card-container">
+        <div class="card">
+          <img src="./Assets/New-product-1.png" alt="New Arrival 1" />
+          <div class="card-details">
+            <h3>Bomber Jacket</h3>
+            <p>$29.99</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./Assets/new-product-2.png" alt="New Arrival 2" />
+          <div class="card-details">
+            <h3>Full Sleeves</h3>
+            <p>$39.99</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./Assets/new-product-3.png" alt="New Arrival 3" />
+          <div class="card-details">
+            <h3>Louis Vuitton Bag</h3>
+            <p>$49.99</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./Assets/new-product-4.png" alt="New Arrival 4" />
+          <div class="card-details">
+            <h3>Sweat Shirt</h3>
+            <p>$59.99</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- footer -->
+    <!-- <section class="footerr"> -->
     <footer class="footer">
-      <div class="footer-column cus">
+      <div class="footer-column">
         <h3>About</h3>
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore dolorem repellendus, hic minima impedit placeat reprehenderit sed tempore architecto harum 
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
+          dolorem repellendus, hic minima impedit placeat reprehenderit sed
+          tempore architecto harum
         </p>
+        <div class="links">
+          <div class="link-social">
+            <img src="./Assets/facebook.png" alt="" srcset="" />
+          </div>
+          <div class="link-social">
+            <img src="./Assets/twitter.png" alt="" srcset="" />
+          </div>
+          <div class="link-social">
+            <img src="./Assets/instagram.png" alt="" srcset="" />
+          </div>
+          <div class="link-social">
+            <img src="./Assets/youtube.png" alt="" srcset="" />
+          </div>
+        </div>
       </div>
       <div class="footer-column">
         <h3>Shopping Online</h3>
@@ -203,11 +519,17 @@
       <div class="footer-column">
         <h3>Contact Us</h3>
         <ul>
-          <li><a href="#">store@mail.column</a></li>
-          <li><a href="#">Tel +91 1234 5678 99 </a></li>
+          <li><a href="mailto:store@mail.column">store@mail.column</a></li>
+          <li><a href="tel:+911234567899">Tel +91 1234 5678 99</a></li>
         </ul>
       </div>
     </footer>
+    <hr />
+    <div class="copyright">
+      <h3>@ Copyrights All Right Reserved</h3>
+    </div>
+    <!-- </section> -->
+
     <script>
       function toggleMenu() {
         const menu = document.getElementById("navbarMenu");
