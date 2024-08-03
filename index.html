@@ -4,384 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ProgramminStudio</title>
-    <style>
-      * {
-        padding: 0;
-        margin: 0;
-        font-family: "Times New Roman", Times, serif;
-        box-sizing: border-box;
-      }
-      section {
-        margin: 8rem;
-      }
-      /* header image */
-      .image-slider {
-        height: 100vh;
-        width: 100vw;
-        background-image: url("./Assets/Banner.png");
-        background-size: cover;
-        background-position: center;
-      }
-
-      /* navbar css */
-      .navbar {
-        position: absolute;
-        top: 0;
-        right: 20%;
-        padding: 20px;
-      }
-
-      .navbar-header {
-        display: none; /* Hide menu icon on desktop */
-      }
-
-      .navbar-menu {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        gap: 15px;
-      }
-
-      .navbar-menu li {
-        margin: 0;
-      }
-
-      .navbar-menu a {
-        text-decoration: none;
-        padding: 8px 20px;
-        color: #fff;
-        display: block;
-      }
-
-      /* Responsive Styles */
-      @media (max-width: 768px) {
-        .navbar {
-          right: 10%; /* Adjust for mobile/tablet screens */
-          width: auto;
-        }
-
-        .navbar-header {
-          display: block;
-          text-align: right;
-        }
-
-        .menu-icon {
-          font-size: 24px;
-          cursor: pointer;
-          display: block;
-        }
-
-        .navbar-menu {
-          display: none;
-          flex-direction: column;
-          position: absolute;
-          top: 50px;
-          right: 0;
-          background-color: rgba(248, 249, 250, 0.9);
-          width: 100%;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .navbar-menu.show {
-          display: flex;
-        }
-
-        .navbar-menu a {
-          padding: 15px;
-          text-align: center;
-          color: black;
-        }
-      }
-
-      /* navbar ends */
-
-      /* Position Secion */
-
-      .position-section {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        padding: 20px;
-        background-color: #f9f9f9;
-      }
-
-      .image-card {
-        position: relative;
-        margin: 10px;
-        flex-basis: calc(50% - 20px); /* two items in a row with spacing */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        background-color: #fff;
-        transition: transform 0.3s;
-      }
-
-      .image-card img {
-        width: 100%;
-        height: auto;
-      }
-
-      .image-card .text-space {
-        position: absolute;
-        top: 50%;
-        left: 30%;
-        transform: translate(-50%, -50%);
-        background: rgba(255, 255, 255, 0.8);
-        padding: 10px;
-        border-radius: 5px;
-        text-align: center;
-        width: 50%;
-      }
-
-      .text-space p{
-        font-weight: bold;
-        font-size: 2rem;
-      }
-
-      .image-card:hover {
-        transform: scale(1.05);
-      }
-
-      @media (max-width: 768px) {
-        .image-card {
-          flex-basis: calc(
-            100% - 20px
-          ); /* one item in a row on smaller screens */
-        }
-      }
-
-      /* General styles for Why Should Choose Us section */
-      .why-choose-us {
-        padding: 40px 20px;
-      }
-
-      .why-choose-us h2 {
-        text-align: center;
-        margin-bottom: 50px;
-        font-size: 2rem;
-      }
-
-      .choose-card-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        padding: 1rem;
-        /* align-items: center; */
-      }
-
-      .choose-card {
-        position: relative;
-        flex: 0 0 22%; /* Approximately 4 cards per row */
-        margin-bottom: 40px;
-        overflow: hidden;
-      }
-
-      .choose-card img {
-        border-radius: 10px;
-        border-bottom: 7px solid #206299;
-        background-color: rgb(194, 194, 194);
-        padding: 2rem;
-        justify-content: center;
-        align-items: center;
-        display: block;
-      }
-
-      .choose-card-details {
-        bottom: -50px; /* Adjust this value as needed */
-        left: 0;
-        width: 100%;
-        background-color: white;
-        padding: 10px 0;
-        text-align: left;
-      }
-
-      .choose-card-details h3 {
-        margin: 0;
-        font-size: 1.1rem;
-      }
-
-      .choose-card-details p {
-        margin: 5px 0 0;
-        font-size: 1rem;
-      }
-
-      /* Tablet styles */
-      @media (max-width: 835px) {
-        .choose-card {
-          flex: 0 0 45%; /* Approximately 2 cards per row */
-        }
-      }
-
-      /* Mobile styles */
-      @media (max-width: 600px) {
-        .choose-card {
-          flex: 0 0 100%; /* 1 card per row */
-        }
-      }
-
-      /* New arrivals section css */
-
-      /* General styles for New Arrivals section */
-      .new-arrivals {
-        padding: 40px 20px;
-      }
-
-      .new-arrivals h2 {
-        text-align: center;
-        margin-bottom: 50px;
-        font-size: 2rem;
-      }
-
-      .card-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-      }
-
-      .card {
-        position: relative;
-        flex: 0 0 22%; /* Approximately 4 cards per row */
-        margin-bottom: 40px;
-        overflow: hidden;
-      }
-
-      .card img {
-        width: 100%;
-        display: block;
-      }
-
-      .card-details {
-        bottom: -50px;
-        left: 0;
-        width: 100%;
-        background-color: white;
-        color: black;
-        padding: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        text-align: left;
-      }
-
-      .card-details h3 {
-        margin: 0;
-        font-size: 1.1rem;
-      }
-
-      .card-details p {
-        margin: 5px 0 0;
-        font-size: 1rem;
-      }
-
-      /* Tablet styles */
-      @media (max-width: 835px) {
-        .card {
-          flex: 0 0 45%; /* Approximately 2 cards per row */
-        }
-      }
-
-      /* Mobile styles */
-      @media (max-width: 600px) {
-        .card {
-          flex: 0 0 100%; /* 1 card per row */
-        }
-      }
-
-      /* new arrival section css end */
-
-      /* General footer styles */
-      .footer {
-        color: black;
-        display: flex;
-        flex-wrap: wrap;
-        padding: 70px;
-        text-align: left;
-      }
-
-      .footer-column,
-      .footer li {
-        font-size: 0.8rem;
-        list-style: none;
-        margin-bottom: 0.7rem;
-      }
-
-      .links {
-        display: flex;
-      }
-      .link-social {
-        padding: 0.7rem;
-        cursor: pointer;
-        transition: 0.5s ease-in-out;
-      }
-
-      .link-social:hover {
-        transform: scale(1.1);
-      }
-
-      .footer-column {
-        flex: 1;
-        min-width: 150px;
-        margin: 10px;
-      }
-
-      .footer h3 {
-        font-weight: bold;
-        color: rgb(20, 18, 18);
-        font-size: 1.2rem;
-        padding-bottom: 10px;
-        margin-bottom: 15px;
-      }
-
-      .footer a {
-        color: black;
-        text-decoration: none;
-      }
-
-      /* Tablet styles for footer */
-      @media (max-width: 835px) {
-        .footer-column {
-          flex: 0 0 45%; /* Each column takes approximately half the width */
-        }
-      }
-
-      /* Mobile styles for footer */
-      @media (max-width: 600px) {
-        .footer {
-          flex-direction: column; /* Stack columns vertically */
-        }
-
-        .footer-column {
-          flex: 1 1 100%; /* Each column takes full width */
-        }
-      }
-
-      .footer hr {
-        border: rgb(63, 41, 41);
-      }
-      .copyright {
-        width: 100%;
-        font-size: 0.6rem;
-        text-align: center;
-        padding: 2rem;
-      }
-    </style>
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <header>
-      <div class="image-slider"></div>
-      <div class="navbar-ab">
-        <nav class="navbar">
-          <div class="navbar-header">
-            <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
-          </div>
-          <ul class="navbar-menu" id="navbarMenu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#pages">Pages</a></li>
-            <li><a href="#shop">Shop</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#contact">Contact Us</a></li>
-          </ul>
-        </nav>
+      <!-- <div class="image-slider"></div> -->
+      <div class="image-slider">
+        <div class="header-text">
+          <p class="txt-one">SALE</p>
+          <p class="txtt-2">STOCKSTAKE SALE</p>
+          <p class="txttt-3">UPTO 70% OFF</p>
+        </div>
       </div>
+      
+      <!-- nnnnn -->
+      <nav class="navbar">
+        <div class="navbar-header">
+          <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+          <!-- <span class="cart-icon"><img src="./Assets/cart.png" alt="Cart"></span> -->
+        </div>
+        <ul class="navbar-menu" id="navbarMenu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#pages">Pages</a></li>
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
     </header>
-
+    
     <!-- Position Section -->
 
     <section class="position-section">
@@ -530,11 +181,6 @@
     </div>
     <!-- </section> -->
 
-    <script>
-      function toggleMenu() {
-        const menu = document.getElementById("navbarMenu");
-        menu.classList.toggle("show");
-      }
-    </script>
+    <script src="./script.js"></script>
   </body>
 </html>

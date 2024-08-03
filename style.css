@@ -1,0 +1,456 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+  box-sizing: border-box;
+}
+section {
+  transition: all 0.5s ease-in-out;
+  margin: 8rem;
+}
+
+/* Header image text */
+
+/* header image */
+.image-slider {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("./Assets/Banner.png");
+  background-size: cover;
+  background-position: center;
+  position: relative; /* Position text relative to this */
+}
+
+/* Text container on top of the image */
+.header-text {
+  position: absolute; /* Position it on top of the image */
+  top: 50%; /* Center vertically */
+  left: 32%; /* Center horizontally */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Center both horizontally and vertically */
+  text-align: left; /* Center text */
+  color: white; /* Text color for visibility */
+  z-index: 1000; /* Ensure it is above other content */
+}
+
+/* Style for headings */
+.header-text h2 {
+  margin: 0;
+  padding: 10px; /* Padding around headings */
+  font-size: 2rem; /* Adjust font size as needed */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: Add shadow for better readability */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .header-text h2 {
+    font-size: 1.5rem; /* Smaller font size on mobile */
+    padding: 5px; /* Adjust padding for smaller screens */
+  }
+}
+
+.txt-one {
+  padding: 0.3rem 0;
+  font-size: 1.4rem;
+}
+.txtt-2 {
+  padding: .8rem 0;
+  font-size: 2rem;
+}
+.txttt-3 {
+  padding: .6rem 0;
+  font-size: 2rem;
+}
+
+/* header image text ends */
+
+/* header image */
+.image-slider {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("./Assets/Banner.png");
+  background-size: cover;
+  background-position: center;
+  position: relative; /* Position navbar relative to this */
+}
+
+/* Navbar base styles */
+.navbar {
+  position: absolute; /* Position on top of the image */
+  top: 0;
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
+  width: auto;
+  display: flex;
+  justify-content: space-between; /* Space between icons */
+  align-items: center; /* Center vertically */
+  padding: 20px;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+/* Navbar header styles */
+.navbar-header {
+  display: flex;
+  align-items: center;
+}
+
+.menu-icon {
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+  display: none; /* Hidden by default */
+}
+
+.cart-icon img {
+  width: 24px;
+  height: auto;
+  margin-left: 20px; /* Space between cart and menu icon */
+}
+
+/* Navbar menu styles */
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 15px;
+}
+
+.navbar-menu li {
+  margin: 0;
+}
+
+.navbar-menu a {
+  text-decoration: none;
+  padding: 8px 20px;
+  color: #fff;
+  display: block;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  /* Navbar settings for mobile view */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0; /* Stick to the left side */
+    width: 20%; /* 20% of the viewport width */
+    height: 100%;
+    background-color: rgba(
+      248,
+      249,
+      250,
+      0.9
+    ); /* Semi-transparent background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow */
+    transition: transform 0.3s ease; /* Smooth transition */
+    transform: translateX(-100%); /* Hide off the left side initially */
+    z-index: 1000; /* Ensure it's above other content */
+  }
+
+  /* Show navbar when toggled */
+  .navbar.show {
+    transform: translateX(0); /* Slide in from the left */
+  }
+
+  /* Show menu icon and cart icon on mobile */
+  .navbar-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .menu-icon {
+    display: block; /* Show menu icon */
+  }
+
+  .cart-icon {
+    display: none; /* Hide cart icon on mobile */
+  }
+
+  /* Navbar menu visibility */
+  .navbar-menu {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar-menu.show {
+    display: flex; /* Show when toggled */
+  }
+}
+
+/* navbar ends */
+
+/* Position Secion */
+
+.position-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.image-card {
+  position: relative;
+  margin: 10px;
+  flex-basis: calc(50% - 20px); /* two items in a row with spacing */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: transform 0.3s;
+}
+
+.image-card img {
+  width: 100%;
+  height: auto;
+}
+
+.image-card .text-space {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  width: 50%;
+}
+
+.text-space p {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.image-card:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .image-card {
+    flex-basis: calc(100% - 20px); /* one item in a row on smaller screens */
+  }
+}
+
+/* General styles for Why Should Choose Us section */
+.why-choose-us {
+  padding: 40px 20px;
+}
+
+.why-choose-us h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2rem;
+}
+
+.choose-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1rem;
+  /* align-items: center; */
+}
+
+.choose-card {
+  position: relative;
+  flex: 0 0 22%; /* Approximately 4 cards per row */
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+
+.choose-card img {
+  border-radius: 10px;
+  border-bottom: 7px solid #206299;
+  background-color: rgb(194, 194, 194);
+  padding: 2rem;
+  justify-content: center;
+  align-items: center;
+  display: block;
+}
+
+.choose-card-details {
+  bottom: -50px; /* Adjust this value as needed */
+  left: 0;
+  width: 100%;
+  background-color: white;
+  padding: 10px 0;
+  text-align: left;
+}
+
+.choose-card-details h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.choose-card-details p {
+  margin: 5px 0 0;
+  font-size: 1rem;
+}
+
+/* Tablet styles */
+@media (max-width: 835px) {
+  .choose-card {
+    flex: 0 0 45%; /* Approximately 2 cards per row */
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 600px) {
+  .choose-card {
+    flex: 0 0 100%; /* 1 card per row */
+  }
+}
+
+/* New arrivals section css */
+
+/* General styles for New Arrivals section */
+.new-arrivals {
+  padding: 40px 20px;
+}
+
+.new-arrivals h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2rem;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  position: relative;
+  flex: 0 0 22%; /* Approximately 4 cards per row */
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  display: block;
+}
+
+.card-details {
+  bottom: -50px;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  color: black;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.card-details h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.card-details p {
+  margin: 5px 0 0;
+  font-size: 1rem;
+}
+
+/* Tablet styles */
+@media (max-width: 835px) {
+  .card {
+    flex: 0 0 45%; /* Approximately 2 cards per row */
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 600px) {
+  .card {
+    flex: 0 0 100%; /* 1 card per row */
+  }
+}
+
+/* new arrival section css end */
+
+/* General footer styles */
+.footer {
+  color: black;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 70px;
+  text-align: left;
+}
+
+.footer-column,
+.footer li {
+  font-size: 0.8rem;
+  list-style: none;
+  margin-bottom: 0.7rem;
+}
+
+.links {
+  display: flex;
+}
+.link-social {
+  padding: 0.7rem;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+
+.link-social:hover {
+  transform: scale(1.1);
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 150px;
+  margin: 10px;
+}
+
+.footer h3 {
+  font-weight: bold;
+  color: rgb(20, 18, 18);
+  font-size: 1.2rem;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.footer a {
+  color: black;
+  text-decoration: none;
+}
+
+/* Tablet styles for footer */
+@media (max-width: 835px) {
+  .footer-column {
+    flex: 0 0 45%; /* Each column takes approximately half the width */
+  }
+}
+
+/* Mobile styles for footer */
+@media (max-width: 600px) {
+  .footer {
+    flex-direction: column; /* Stack columns vertically */
+  }
+
+  .footer-column {
+    flex: 1 1 100%; /* Each column takes full width */
+  }
+}
+
+.footer hr {
+  border: rgb(63, 41, 41);
+}
+.copyright {
+  width: 100%;
+  font-size: 0.6rem;
+  text-align: center;
+  padding: 2rem;
+}
+@media (max-width: 680px) {
+  section {
+    
+    margin: 4rem;
+  }
+}
